@@ -40,24 +40,52 @@ const router = createBrowserRouter([
       },
       {
         path:"/job/:id",
-        element:
-        <Job/>
+        element:(
+          <ProtectedRoute>
+        <job/>
+        </ProtectedRoute>
+        ),
+      },
+      {
+        path: "/job",
+        element:(
+          <ProtectedRoute>
+        <Job />
+        </ProtectedRoute>
+      ),
       },
       {
         path:"/jobpage",
-        element:<JobPage/>
+        element:(
+          <ProtectedRoute>
+        <JobPage/>
+        </ProtectedRoute>
+        ),
       },
       {
         path:"/postjob",
-        element:<PostJob/>
+        element:(
+        <ProtectedRoute>
+        <PostJob/>
+        </ProtectedRoute>
+      ),
       },
       {
-        path:"/savedjobs",
-        element:<SavedJobs/>
+        path:"/saved-jobs",
+        element:
+        (
+          <ProtectedRoute>
+        <SavedJobs/>
+        </ProtectedRoute>
+        ),
       },
       {
-        path:"/myjobs",
-        element:<MyJobs/>
+        path:"/my-jobs",
+        element:(
+          <ProtectedRoute>
+        <MyJobs/>
+        </ProtectedRoute>
+        ),
       },
     ]
   }
